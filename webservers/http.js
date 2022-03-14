@@ -1,40 +1,36 @@
 //http and https
-const http=require("http");
-// Server With Simple HTTP 
+const http = require("http");
+// Server With Simple HTTP
+
+//const requestListener=
+
+// Server Creation code
 
 const server = http.createServer((req, res) => {
-   
-    if(req.url=="/home" && req.method=="GET") {
-        res.setHeader('Content-Type', 'text/html');
-        res.setHeader('X-Foo', 'bar');
-        res.writeHead(200, { 'Content-Type': 'text/plain' });
-        res.end('home');
+  console.log(req.url);
 
-    }
-    else if(req.url=="/user" && req.method=="GET") {
+  if (req.url == "/home" && req.method == "POST") {
+    // this data event wiill be meitted by http server
+    req.on("data", (data) => {
+      console.log(data.toString());
+    });
 
-        //Data -here
-        res.setHeader('Content-Type', 'text/html');
-        res.setHeader('X-Foo', 'bar');
-        res.writeHead(200, { 'Content-Type': 'text/plain' });
-        res.end('user');
+    req.on("end", () => {
+      res.setHeader("Content-Type", "text/html");
+      res.writeHead(200, { "Content-Type": "text/plain" });
+      res.end("home"); // ending the response
+    });
+  } else if (req.url.match(/\/getRequest\/[1-9]/g) && req.method == "GET") {
+    // this data event wiill be meitted by http server
+     let param=req.url.split("/")[2]
+     
 
-    }
+    res.setHeader("Content-Type", "text/html");
+    res.writeHead(200, { "Content-Type": "text/plain" });
+    res.end("Your Id is "+param); // ending the response
+  }
+});
 
-    else if(req.url=="/post" && req.method=="POST") {
-
-        // Data here ----post request
-        res.setHeader('Content-Type', 'text/html');
-        res.setHeader('X-Foo', 'bar');
-        res.writeHead(200, { 'Content-Type': 'text/plain' });
-        res.end('user post request');
-
-    }
-
-   
-  });
-
-  server.listen(9091,()=>{
-      console.log("Server Running At post 9091")
-
-  })
+server.listen(9091, () => {
+  console.log("Server Running At post 9091");
+});
