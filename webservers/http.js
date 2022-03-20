@@ -779,6 +779,7 @@ const server = http.createServer((req, res) => {
     req.on("end", () => {
       res.setHeader("Content-Type", "text/html");
       res.writeHead(200, { "Content-Type": "text/plain" });
+      
       res.end("home"); // ending the response
     });
   } else if (req.url.match(/\/getRequest\/[1-9]/g) && req.method == "GET") {

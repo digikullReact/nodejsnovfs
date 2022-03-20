@@ -34,6 +34,8 @@ app.get('/template', (req, res) => {
 
   // render method is generally used when you are rendering any template engine
   res.render('temp', { data: data})
+
+
 })
 
 app.get("/api", function (req, res, next) {
@@ -221,6 +223,18 @@ let str="";
 
 // Template engines--->
 
+
+
+
+app.get("/largefile",(req,res)=>{
+  const fs=require("fs")
+  const readStream=fs.createReadStream("bigfile.txt");
+
+  readStream.pipe(res);
+
+  // how to use writestream   --->hw
+
+})
 
 
 
