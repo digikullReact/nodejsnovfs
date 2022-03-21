@@ -1,0 +1,19 @@
+show databases;  // gives you all the databases present in your database server 
+
+use mydb; // creating database switching to database
+
+ show collections; // shows all the collections in your db
+
+ db.products.find().pretty(); // shows all the data inside the collection
+
+ db.products.insert({name:"Colgate"}); // it will insert one data at a time
+
+
+ db.products.updateMany //updates all the documents
+
+  db.products.updateOne //updates first document that it encounters
+
+  db.products.deleteMany({cond:"cond"}) // deletes all the documents that satisfioes the condition
+  db.products.deleteOne // will delete first document that satisfies the condition
+
+ Model.update  //  --->for mongoose
