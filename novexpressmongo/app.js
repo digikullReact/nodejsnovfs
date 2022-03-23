@@ -60,3 +60,10 @@ app.listen(port,()=>{
 // mysql as well intro  --->
 //sequelize 
 // sequelize crud 
+
+// http ---->not necessary --->
+
+/// Login form using ejs template engine -----> template  you can use bootstrap for that 
+
+//  You have to create another application -->which has apis get ,post delete 
+// send github repo in this chat only
