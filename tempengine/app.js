@@ -3,6 +3,7 @@ const app = express();
 const port = process.env.PORT || 9090;
 const User = require("./models/user");
 app.use(express.json());
+app.use(express.urlencoded({extended:false}));
 app.set("view engine", "ejs");
 
 // Routes Section -->
@@ -13,10 +14,19 @@ app.set("view engine", "ejs");
 app.get("/home", (req, res) => {
   // We need to query the database in here --->
   User.find().then((data) => {
-    console.log(data);
+   // console.log(data);
     res.render("home", { data: data, heading: "My Page" }); // it does two things --> one is the sends your html page +any data that you have
   });
 });
+
+
+app.post("/form/submit",(req,res)=>{
+  console.log(req.body.email);
+
+
+  res.redirect("http://www.google.com");
+
+})
 //Create operation done
 
 // Post operation

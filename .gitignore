@@ -3,3 +3,5 @@ express/node_modules
 augwemongo/node_modules
 novexpressmongo/node_modules
 tempengine/node_modules
+mysqlcrud/node_modules
+handlebars/node_modules
