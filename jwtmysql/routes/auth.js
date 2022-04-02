@@ -5,5 +5,6 @@ const router=express.Router();
 
 router.post("/create",createUser)
 
+//router.get("/getAll",getAll)
 
 module.exports=router;
