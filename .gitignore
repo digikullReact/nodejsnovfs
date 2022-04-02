@@ -5,3 +5,5 @@ novexpressmongo/node_modules
 tempengine/node_modules
 mysqlcrud/node_modules
 handlebars/node_modules
+jwtauth/node_modules
+sessions/node_modules
