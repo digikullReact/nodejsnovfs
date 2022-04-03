@@ -48,6 +48,9 @@ const Assignment = sequelize.define(
         type: DataTypes.STRING,
         // allowNull defaults to true
       },
+      image:{
+        type: DataTypes.STRING,
+      }
   
     },
     {

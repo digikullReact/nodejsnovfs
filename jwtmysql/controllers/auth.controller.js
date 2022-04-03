@@ -13,8 +13,7 @@ module.exports={
 
     getAll:async(req,res)=>{
 
-        const assignment = await Assignment.create({ name:req.body.name, subject: req.body.subject });
-
+        const assignment = await Assignment.findAll();
         res.json({message:"Success",data:assignment})
 
     },
