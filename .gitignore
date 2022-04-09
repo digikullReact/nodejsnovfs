@@ -9,3 +9,6 @@ jwtauth/node_modules
 sessions/node_modules
 jwtmysql/node_modules
 fileuploaddemo/node_modules
+testig/node_modules
+socket/node_modules
+socket/socketclient/node_modules

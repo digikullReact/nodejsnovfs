@@ -39,6 +39,22 @@ app.get('/template', (req, res) => {
 })
 
 app.get("/api", function (req, res, next) {
+
+  // Cpu intensive task
+  setImmediate(()=>{
+    for(let i=0;i<10000000;i++){
+      console.log(i);
+
+      if (i%2==0){
+        setImmediate(()=>{
+
+        })
+      }
+ 
+    }
+
+  })
+ 
   res.send("Hello World");
 });
 
