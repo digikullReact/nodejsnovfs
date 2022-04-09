@@ -15,15 +15,11 @@ const Socket = () => {
 
 
         socket.on("received",(res)=>{
-            console.log(data);
-            console.log(res);
-            setData([...data,res]);
-
-        })
-
-        
-
-    },[])
+           
+            data.push(res);
+            setData([...data]);
+      })
+},[])
 
 
     const handleChange=(event)=>{
